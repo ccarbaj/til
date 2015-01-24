@@ -1,0 +1,24 @@
+# Getting all but the first element from Ruby array
+
+When getting all but the first element from an array in Ruby, we have a few
+options.
+
+Given the following list:
+----------------------
+list = [1,2,3,4]
+----------------------
+
+>> class Array
+>>   def clip n=1
+>>     take size - n
+>>   end
+>> end
+=> nil
+>> a
+=> [1, 2, 3, 4]
+>> a.clip
+=> [1, 2, 3]
+>> a = a + a
+=> [1, 2, 3, 4, 1, 2, 3, 4]
+>> a.clip 2
+=> [1, 2, 3, 4, 1, 2]
